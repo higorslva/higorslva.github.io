@@ -1,0 +1,308 @@
+/* Reset de estilos básicos */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+.inter-100 {
+  font-family: "Inter", serif;
+  font-size: 22px;
+  font-optical-sizing: auto;
+  font-style: normal;
+}
+
+/* Fonte e cores principais */
+body {
+    font-family: 'Inter';font-size: 18px;
+    line-height: 1.6;
+    background-color: #fff;
+    color: #333;
+}
+
+.container {
+    width: 80%;
+    max-width: 1000px;
+    margin: 0 auto;
+}
+/* Adicionando a animação de fade-in e slide-up */
+.fade-in-up {
+    opacity: 0;
+    transform: translateY(50px);
+    transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+/* A classe 'visible' será adicionada pelo JS quando o elemento entrar na tela */
+.fade-in-up.visible {
+    opacity: 1;
+    transform: translateY(0);
+}
+
+/* Estilos do menu lateral */
+.menu.open {
+    transform: translateX(0);  /* Move o menu para a posição inicial */
+}
+
+/* Quando o menu estiver aberto, esconder o conteúdo do header */
+@media (max-width: 768px) {
+    header {
+        position: relative;
+        top: 0;
+        left: 0;
+        width: 100%;
+        z-index: 1000;
+        transition: transform 0.3s ease-in-out;
+    }
+    header.open {
+      transform: translateX(70%);
+  }
+}
+
+header h1 {
+    font-size: 2.5em;
+    margin-bottom: 10px;
+    font-weight: 600;
+}
+
+header p {
+    font-size: 1.2em;
+}
+
+/* Seções */
+section {
+    position: relative;
+    padding-top: 100px;
+    padding: 200px 0;
+    backdrop-filter: blur(10px);
+    background-color: rgba(255, 255, 255, 0.8); /* fundo levemente transparente */
+}
+section::before {
+  content: "";
+  display: block;
+  height: 100px; /* Altura equivalente ao header */
+  margin-top: -100px; /* "Levanta" o conteúdo da seção */
+  visibility: hidden; /* Não afeta visualmente */
+}
+
+section h2 {
+    font-size: 2.2em;
+    margin-bottom: 20px;
+    text-align: center;
+    color: #333;
+    font-weight: 600;
+}
+
+section p {
+    font-size: 1.1em;
+    text-align: center;
+    color: #555;
+}
+
+ul {
+    list-style-type: none;
+    padding-left: 0;
+}
+
+ul li {
+    font-size: 1.1em;
+    margin: 10px 0;
+}
+
+/* Projetos */
+.project {
+    background-color: #fff;
+    padding: 20px;
+    margin-bottom: 20px;
+    border-radius: 12px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: box-shadow 0.3s ease-in-out;
+}
+
+.project:hover {
+    box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.project h3 {
+    font-size: 1.5em;
+    margin-bottom: 10px;
+    color: #333;
+    font-weight: 600;
+}
+
+.project p {
+    font-size: 1.1em;
+    color: #555;
+}
+
+/* Links */
+a {
+    color: #007aff;
+    text-decoration: none;
+    font-weight: bold;
+    transition: color 0.3s ease;
+}
+
+a:hover {
+    color: #0051a1;
+}
+
+/* Contato */
+.contact p {
+    font-size: 1.1em;
+    color: #555;
+}
+
+/* Footer */
+footer {
+    background-color: #fff;
+    color: #333;
+    text-align: center;
+    padding: 20px 0;
+    margin-top: 40px;
+    box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.05);
+}
+
+footer p {
+    font-size: 1em;
+}
+
+/* Efeito de desfoque para dar um toque moderno */
+
+/* Estilos para o Header */
+/* Estilos básicos do header e menu */
+header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 200px;
+  background: #fff;
+  z-index: 10;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  padding: 0 20px;
+  transition: transform 0.3s ease;
+  background-color: #fff;
+  color: #333;
+  padding: 40px 0;
+  text-align: center;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
+}
+  .main-content {
+    padding-top: 25px; /* Adiciona espaço entre o header e o conteúdo */
+}
+  /* Estilo do menu para telas grandes */
+  .menu {
+    display: flex; /* Menu visível por padrão em telas grandes */
+    gap: 20px;
+  }
+  
+  .menu ul {
+    display: flex;
+    list-style: none;
+    margin: 0;
+    padding: 0;
+  }
+  
+  .menu li {
+    padding: 0 10px;
+  }
+  
+  .menu a {
+    text-decoration: none;
+    color: #333;
+    font-size: 18px;
+  }
+.about {
+    margin-top: 120px; /* Espaço suficiente para que o header não esconda a seção */
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+header h4 {
+    position: relative;
+    font-size: 2.5em;
+    margin-bottom: 10px;
+    font-weight: 600;
+    top: 0;
+    right: 1;  /* Mova para a direita */
+    width: auto;  /* Ajuste a largura conforme necessário */
+    z-index: 1000;
+    transition: transform 0.3s ease-in-out;
+}
+  /* Oculta o menu em telas pequenas */
+  @media (max-width: 768px) {
+    .menu {
+        position: fixed;
+        top: 0;
+        left: 50%;
+        transform: translateX(-50%) translateY(-100%);  /* Inicialmente fora da tela */
+        height: 100vh;
+        width: 80%;  /* Define a largura do menu em 80% da tela */
+        max-width: 300px;  /* Limita a largura do menu */
+        background: #f4f4f4;
+        box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+        transition: transform 0.3s ease;
+    }
+  
+    .menu.show {
+        transform: translateX(-50%) translateY(0);  /* Move o menu para a tela */
+    }
+  
+      .menu ul {
+        flex-direction: column;
+        height: 100%;
+        justify-content: center;
+        align-items: center; /* Alinha os itens ao centro */
+      }
+    
+      .menu li {
+        text-align: center;
+        padding: 15px 0;
+        border-bottom: 1px solid #ddd;
+      }
+    
+      .menu li:last-child {
+        border-bottom: none;
+      }
+    }
+  
+  /* Ícone do hambúrguer */
+  .hamburger {
+    cursor: pointer;
+    display: none; /* Oculto por padrão em telas grandes */
+    flex-direction: column;
+    justify-content: space-around;
+    width: 30px;
+    height: 20px;
+  }
+  
+  .hamburger span {
+    display: block;
+    height: 3px;
+    background: #333;
+    border-radius: 3px;
+    transition: 0.3s ease;
+  }
+  
+  /* Efeitos do ícone do hambúrguer em telas pequenas */
+  header.open .hamburger span:nth-child(1) {
+    transform: rotate(45deg) translate(5px, 5px);
+  }
+  
+  header.open .hamburger span:nth-child(2) {
+    opacity: 0;
+  }
+  
+  header.open .hamburger span:nth-child(3) {
+    transform: rotate(-45deg) translate(5px, -5px);
+  }
+  
+  /* Responsividade */
+  @media (max-width: 768px) {
+    .hamburger {
+      display: flex; /* Exibe o ícone do hambúrguer em telas pequenas */
+    }
+  }
+  
