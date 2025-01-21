@@ -1,4 +1,4 @@
-/* Reset de estilos básicos */
+
 * {
     margin: 0;
     padding: 0;
@@ -11,7 +11,7 @@
   font-style: normal;
 }
 
-/* Fonte e cores principais */
+
 body {
     font-family: 'Inter';font-size: 18px;
     line-height: 1.6;
@@ -24,25 +24,25 @@ body {
     max-width: 1000px;
     margin: 0 auto;
 }
-/* Adicionando a animação de fade-in e slide-up */
+
 .fade-in-up {
     opacity: 0;
     transform: translateY(50px);
     transition: opacity 0.5s ease, transform 0.5s ease;
 }
 
-/* A classe 'visible' será adicionada pelo JS quando o elemento entrar na tela */
+
 .fade-in-up.visible {
     opacity: 1;
     transform: translateY(0);
 }
 
-/* Estilos do menu lateral */
+
 .menu.open {
-    transform: translateX(0);  /* Move o menu para a posição inicial */
+    transform: translateX(0);  
 }
 
-/* Quando o menu estiver aberto, esconder o conteúdo do header */
+
 @media (max-width: 768px) {
     header {
         position: relative;
@@ -67,20 +67,20 @@ header p {
     font-size: 1.2em;
 }
 
-/* Seções */
+
 section {
     position: relative;
     padding-top: 100px;
     padding: 200px 0;
     backdrop-filter: blur(10px);
-    background-color: rgba(255, 255, 255, 0.8); /* fundo levemente transparente */
+    background-color: rgba(255, 255, 255, 0.8); 
 }
 section::before {
   content: "";
   display: block;
-  height: 100px; /* Altura equivalente ao header */
-  margin-top: -100px; /* "Levanta" o conteúdo da seção */
-  visibility: hidden; /* Não afeta visualmente */
+  height: 100px; 
+  margin-top: -100px; 
+  visibility: hidden; 
 }
 
 section h2 {
@@ -107,7 +107,7 @@ ul li {
     margin: 10px 0;
 }
 
-/* Projetos */
+
 .project {
     background-color: #fff;
     padding: 20px;
@@ -133,7 +133,7 @@ ul li {
     color: #555;
 }
 
-/* Links */
+
 a {
     color: #007aff;
     text-decoration: none;
@@ -145,15 +145,16 @@ a:hover {
     color: #0051a1;
 }
 
-/* Contato */
+
 .contact p {
     font-size: 1.1em;
     color: #555;
 }
 
-/* Footer */
+
 footer {
     background-color: #fff;
+    position: inherit;
     color: #333;
     text-align: center;
     padding: 20px 0;
@@ -165,10 +166,10 @@ footer p {
     font-size: 1em;
 }
 
-/* Efeito de desfoque para dar um toque moderno */
 
-/* Estilos para o Header */
-/* Estilos básicos do header e menu */
+
+
+
 header {
   display: flex;
   justify-content: space-between;
@@ -190,11 +191,11 @@ header {
   box-shadow: 0 2px 5px rgba(0, 0, 0, 0.05);
 }
   .main-content {
-    padding-top: 25px; /* Adiciona espaço entre o header e o conteúdo */
+    padding-top: 25px; 
 }
-  /* Estilo do menu para telas grandes */
+  
   .menu {
-    display: flex; /* Menu visível por padrão em telas grandes */
+    display: flex; 
     gap: 20px;
   }
   
@@ -215,7 +216,7 @@ header {
     font-size: 18px;
   }
 .about {
-    margin-top: 120px; /* Espaço suficiente para que o header não esconda a seção */
+    margin-top: 120px; 
     padding: 20px;
     border-radius: 8px;
     box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
@@ -226,35 +227,35 @@ header h4 {
     margin-bottom: 10px;
     font-weight: 600;
     top: 0;
-    right: 1;  /* Mova para a direita */
-    width: auto;  /* Ajuste a largura conforme necessário */
+    right: 1;  
+    width: auto;  
     z-index: 1000;
     transition: transform 0.3s ease-in-out;
 }
-  /* Oculta o menu em telas pequenas */
+  
   @media (max-width: 768px) {
     .menu {
         position: fixed;
         top: 0;
         left: 50%;
-        transform: translateX(-50%) translateY(-100%);  /* Inicialmente fora da tela */
+        transform: translateX(-50%) translateY(-100%);  
         height: 100vh;
-        width: 80%;  /* Define a largura do menu em 80% da tela */
-        max-width: 300px;  /* Limita a largura do menu */
+        width: 80%;  
+        max-width: 300px;  
         background: #f4f4f4;
         box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
         transition: transform 0.3s ease;
     }
   
     .menu.show {
-        transform: translateX(-50%) translateY(0);  /* Move o menu para a tela */
+        transform: translateX(-50%) translateY(0);  
     }
   
       .menu ul {
         flex-direction: column;
         height: 100%;
         justify-content: center;
-        align-items: center; /* Alinha os itens ao centro */
+        align-items: center; 
       }
     
       .menu li {
@@ -268,10 +269,10 @@ header h4 {
       }
     }
   
-  /* Ícone do hambúrguer */
+  
   .hamburger {
     cursor: pointer;
-    display: none; /* Oculto por padrão em telas grandes */
+    display: none; 
     flex-direction: column;
     justify-content: space-around;
     width: 30px;
@@ -286,7 +287,7 @@ header h4 {
     transition: 0.3s ease;
   }
   
-  /* Efeitos do ícone do hambúrguer em telas pequenas */
+  
   header.open .hamburger span:nth-child(1) {
     transform: rotate(45deg) translate(5px, 5px);
   }
@@ -299,10 +300,10 @@ header h4 {
     transform: rotate(-45deg) translate(5px, -5px);
   }
   
-  /* Responsividade */
+  
   @media (max-width: 768px) {
     .hamburger {
-      display: flex; /* Exibe o ícone do hambúrguer em telas pequenas */
+      display: flex; 
     }
   }
   
