@@ -11,7 +11,6 @@
   font-style: normal;
 }
 
-
 body {
   font-family: 'Inter';
   font-size: 18px;
@@ -32,6 +31,10 @@ body {
   transition: opacity 0.5s ease, transform 0.5s ease;
 }
 
+.about p {
+  margin-bottom: 1.5em; /* Espaçamento inferior */
+  line-height: 1.6; /* Altura da linha */
+}
 
 .fade-in-up.visible {
   opacity: 1;
@@ -136,6 +139,37 @@ ul li {
   color: #555;
 }
 
+.projects-content {
+  display: flex; /* Layout flexível */
+  align-items: flex-start; /* Alinha a foto e o texto no topo */
+  gap: 40px; /* Espaçamento entre a foto e o texto */
+  margin-top: 20px; /* Espaçamento acima do conteúdo */
+}
+
+/* Inverte a ordem da foto e do texto na seção "Projetos" */
+.projects-content .profile-picture {
+  order: 2; /* Foto à direita */
+}
+
+.projects-content .projects-text {
+  order: 1; /* Texto à esquerda */
+}
+.project:hover {
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.2);
+}
+
+.project h3 {
+  font-size: 1.5em;
+  margin-bottom: 10px;
+  color: #333;
+  font-weight: 600;
+}
+
+.project p {
+  font-size: 1.1em;
+  color: #555;
+}
+
 
 a {
   color: #007aff;
@@ -153,8 +187,41 @@ a:hover {
   font-size: 1.1em;
   color: #555;
 }
+.contact-content {
+  display: flex; /* Layout flexível */
+  align-items: center; /* Alinha a foto e o texto verticalmente */
+  gap: 40px; /* Espaçamento entre a foto e o texto */
+  margin-top: 20px; /* Espaçamento acima do conteúdo */
+}
 
+/* Inverte a ordem da foto e do texto na seção "Contato" */
+.contact-content .profile-picture {
+  order: 2; /* Foto à direita */
+}
 
+.contact-content .contact-text {
+  order: 1; /* Texto à esquerda */
+}
+.skills-content {
+  display: flex; /* Layout flexível */
+  align-items: center; /* Alinha a foto e o texto verticalmente */
+  gap: 40px; /* Espaçamento entre a foto e o texto */
+  margin-top: 20px; /* Espaçamento acima do conteúdo */
+}
+
+/* Estilo para a foto de perfil */
+.profile-picture {
+  flex: 0 0 200px; /* Largura fixa para a foto */
+}
+
+.profile-picture img {
+  width: 100%; /* Faz a imagem ocupar 100% da largura da div */
+}
+
+/* Estilo para o texto */
+.contact-text {
+  flex: 1; /* Ocupa o espaço restante */
+}
 footer {
   background-color: #fff;
   position: inherit;
@@ -168,10 +235,6 @@ footer {
 footer p {
   font-size: 1em;
 }
-
-
-
-
 
 header {
   display: flex;
@@ -226,6 +289,24 @@ header {
   padding: 20px;
   border-radius: 8px;
   box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+.about-content {
+  display: flex; /* Layout flexível */
+  align-items: center; /* Alinha a foto e o texto verticalmente */
+  gap: 40px; /* Espaçamento entre a foto e o texto */
+  margin-top: 20px; /* Espaçamento acima do conteúdo */
+}
+.profile-picture {
+  flex: 0 0 500px; /* Largura fixa para a foto */
+}
+
+.profile-picture img {
+  width: 100%; /* Faz a imagem ocupar 100% da largura da div */
+}
+
+/* Estilo para o texto */
+.about-text {
+  flex: 1; /* Ocupa o espaço restante */
 }
 
 header h4 {
@@ -328,6 +409,27 @@ header h4 {
   header.open .hamburger span:nth-child(3) {
     transform: rotate(-45deg) translate(5px, -5px);
   }
+  .about-content {
+    flex-direction: column; /* Empilha a foto e o texto verticalmente */
+    gap: 20px; /* Reduz o espaçamento */
+}
+.projects-content {
+  flex-direction: column; /* Empilha a foto e o texto verticalmente */
+  gap: 20px; /* Reduz o espaçamento */
+}
+
+.projects-content .profile-picture {
+  order: 1; /* Foto acima do texto em dispositivos móveis */
+}
+
+.projects-content .projects-text {
+  order: 2; /* Texto abaixo da foto em dispositivos móveis */
+}
+
+.profile-picture {
+    flex: 0 0 auto; /* Remove a largura fixa */
+    width: 150px; /* Define uma largura menor para a foto em dispositivos móveis */
+}
 }
 
 @media (max-width: 768px) {
@@ -382,4 +484,21 @@ header h4 {
     display: flex;
     /* Mostrar o botão de fechar */
   }
+  .contact-content {
+    flex-direction: column; /* Empilha a foto e o texto verticalmente */
+    gap: 20px; /* Reduz o espaçamento */
+}
+
+.contact-content .profile-picture {
+    order: 1; /* Foto acima do texto em dispositivos móveis */
+}
+
+.contact-content .contact-text {
+    order: 2; /* Texto abaixo da foto em dispositivos móveis */
+}
+
+.profile-picture {
+    flex: 0 0 auto; /* Remove a largura fixa */
+    width: 150px; /* Define uma largura menor para a foto em dispositivos móveis */
+}
 }
