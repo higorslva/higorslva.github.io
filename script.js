@@ -26,19 +26,14 @@ document.addEventListener("DOMContentLoaded", () => {
     // Obter elementos
     const hamburger = document.getElementById('hamburger');
     const menu = document.getElementById('menu');
-    const closeBtn = document.getElementById('close-btn'); // Botão de fechar
     const menuItems = menu.querySelectorAll('a'); // Seleciona todos os links do menu
 
-    if (hamburger && menu && closeBtn) {
+    if (hamburger && menu) {
         // Abrir/fechar o menu ao clicar no ícone do hambúrguer
         hamburger.addEventListener('click', (e) => {
             e.stopPropagation(); // Impede que o clique se propague para o documento
+            hamburger.classList.toggle('is-active'); // Adiciona/remove a classe para animar o ícone
             menu.classList.toggle('show');
-        });
-
-        // Fechar o menu ao clicar no botão de fechar
-        closeBtn.addEventListener('click', () => {
-            menu.classList.remove('show'); // Fecha o menu
         });
 
         // Fechar o menu ao clicar em um item do menu
