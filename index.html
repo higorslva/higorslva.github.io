@@ -4,154 +4,176 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta name="description" content="Portfólio de Desenvolvedor - Higor Silva">
-    <title>Higor Silva</title>
-    <link href='https://fonts.googleapis.com/css?family=Inter' rel='stylesheet'>
-    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <meta name="description" content="Portfólio de Higor Silva - Desenvolvedor de Software especializado em LLMs e DevOps">
+    <title>Higor Silva — Desenvolvedor</title>
     <link rel="stylesheet" href="styles.css">
     <script src="script.js" defer></script>
 </head>
 
 <body>
-    <header>
-        <div class="container">
-            <div class="logo">
-                <h4>Higor Silva</h4>
-            </div>
-            <div class="hamburger" id="hamburger">
-                <span class="bar"></span>
-                <span class="bar"></span>
-                <span class="bar"></span>
-            </div>
-            <ul class="menu" id="menu">
+    <header class="header">
+        <nav class="nav-container">
+            <div class="logo">Higor Silva</div>
+            <button class="menu-toggle" id="menuToggle" aria-label="Menu">
+                <span></span>
+                <span></span>
+                <span></span>
+            </button>
+            <ul class="nav-menu" id="navMenu">
+                <li><a href="#home">Início</a></li>
                 <li><a href="#about">Sobre</a></li>
-                <li><a href="#skills">Habilidades</a></li>
                 <li><a href="#projects">Projetos</a></li>
                 <li><a href="#contact">Contato</a></li>
-                <li><a href="https://www.linkedin.com/in/higorslva" target="_blank">LinkedIn</a></li>
-                <li><a href="https://github.com/higorslva" target="_blank">GitHub</a></li>
+                <li><a href="http://lattes.cnpq.br/4972084328427721">Lattes CNPq</a></li>
             </ul>
-        </div>
+        </nav>
     </header>
 
-    <div class="main-content">
+    <!-- Hero Section -->
+    <section id="home" class="hero">
+        <div class="hero-content">
+            <div class="hero-image">
+                <img src="assets/profile.jpg" alt="Higor Silva" class="profile-avatar">
+            </div>
+            <h1 class="hero-title">Higor Silva</h1>
+            <p class="hero-subtitle">Desenvolvedor de Software • Aprendiz em LLMs • DevOps • Pesquisador</p>
+            <a href="#projects" class="btn-primary">Ver Projetos</a>
+            <div class="social-links">
+                <a href="https://www.linkedin.com/in/higorslva" target="_blank" aria-label="LinkedIn">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                        <rect x="2" y="9" width="4" height="12"></rect>
+                        <circle cx="4" cy="4" r="2"></circle>
+                    </svg>
+                </a>
+                <a href="https://github.com/higorslva" target="_blank" aria-label="GitHub">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                    </svg>
+                </a>
+                <a href="http://lattes.cnpq.br/4972084328427721" target="_blank" aria-label="Lattes">
+                    <svg width="24" height="24" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                        <path d="M4 19.5A2.5 2.5 0 0 1 6.5 17H20"></path>
+                        <path d="M6.5 2H20v20H6.5A2.5 2.5 0 0 1 4 19.5v-15A2.5 2.5 0 0 1 6.5 2z"></path>
+                    </svg>
+                </a>
+            </div>
+        </div>
+    </section>
 
-        <section class="about fade-in">
-            <section id="about">
-                <div class="container">
-                    <h2>Sobre Mim</h2>
-                    <div class="about-content">
-                        <!-- Div para a foto de perfil -->
-                        <div class="profile-picture">
-                            <img src="assets/profile.jpg" alt="Foto de Higor Silva">
+    <!-- Sobre Section -->
+    <section id="about" class="section about-section">
+        <div class="container">
+            <h2 class="section-title fade-in">Sobre Mim</h2>
+            <div class="about-content fade-in">
+                <div class="about-text">
+                    <p>Formando em Ciência da Computação pela <strong>Universidade Federal do Amapá</strong>, sou apaixonado por tecnologia e algoritmos, com experiência sólida em Python focado em LLMs e ferramentas como Langchain, Llama Index, Ollama e Qdrant, além de DevOps.</p>
+                    
+                    <p>Possuo conhecimentos avançados em bancos de dados como MySQL e MariaDB, e experiência prática em projetos universitários com servidores Linux, incluindo Apache, Nginx, PHP e MySQL. Também tenho expertise na configuração e manutenção de sistemas operacionais Linux e Windows.</p>
+                    
+                    <p>Atualmente, sou residente de desenvolvimento de software no <strong>Tribunal de Justiça do Amapá (TJAP)</strong>, onde liderei o desenvolvimento de um chatbot inovador para facilitar o acesso do cidadão aos serviços jurídicos, incluindo informações sobre o tribunal e consultas de processos. O projeto está disponível na página inicial do site do TJAP.</p>
+                    
+                    <p>Meu objetivo é simplificar soluções complexas, proporcionando uma experiência acessível e intuitiva ao usuário final.</p>
+                </div>
+                <div class="about-skills">
+                    <h3>Habilidades</h3>
+                    <div class="skills-grid">
+                        <div class="skill-item">
+                            <div class="skill-icon">💻</div>
+                            <span>Python & LLMs</span>
                         </div>
-                        <!-- Div para o texto -->
-                        <div class="about-text">
-                            <p>Me chamo Higor Silva, formando em Ciência da Computação pela <b>Universidade Federal do
-                                    Amapá</b>.
-                                Sou apaixonado por tecnologia e algoritmos, com experiência em Python com foco em LLMs e
-                                ferramentas como Langchain,
-                                Llama Index, Ollama e Qdrant, além de DevOps.</p>
-                            <p> Tenho sólidos conhecimentos em bancos de dados, como MySQL e MariaDB, e
-                                atuei em projetos universitários com servidores Linux (Apache, Nginx, PHP e MySQL), além
-                                de configurar e manter sistemas
-                                operacionais Linux e Windows.</p>
-                            <p>Atualmente, sou residente de desenvolvimento de software no <b>Tribunal de Justiça do
-                                    Amapá (TJAP)</b>
-                                onde liderei o desenvolvimento de um chatbot para facilitar o acesso do cidadão aos
-                                serviços jurídicos,
-                                incluindo informações sobre o tribunal e consultas de processos. Atualmente está disponível na página inicial do site do TJAP.
-                            </p>
-                            <p>Meu objetivo é simplificar soluções complexas, proporcionando uma experiência acessível e
-                                intuitiva ao usuário final.</p>
+                        <div class="skill-item">
+                            <div class="skill-icon">🔧</div>
+                            <span>DevOps & Linux</span>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-icon">🗄️</div>
+                            <span>MySQL & Qdrant</span>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-icon">🚀</div>
+                            <span>Flask & APIs</span>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-icon">📦</div>
+                            <span>Git & GitHub</span>
+                        </div>
+                        <div class="skill-item">
+                            <div class="skill-icon">⚡</div>
+                            <span>Metodologias Ágeis</span>
                         </div>
                     </div>
                 </div>
-            </section>
-        </section>
-
-        <section class="skills fade-in">
-            <div class="container">
-                <section id="skills">
-                    <h2>Habilidades</h2>
-                    <div class="skills-content">
-                        <!-- Div para a foto de perfil -->
-                        <div class="profile-picture">
-                            <img src="assets/laptop.png" alt="Foto de Higor Silva">
-                        </div>
-                        <!-- Div para o texto -->
-                        <div class="skills-text">
-                            <ul>
-                                <li> > Python, Langchain, LLMs</li>
-                                <li> > Infraestrutura Linux (DevOps)</li>
-                                <li> > Git, GitHub</li>
-                                <li> > Banco de Dados: MySQL, Qdrant</li>
-                                <li> > Flask</li>
-                                <li> > Metodologias Ágeis</li>
-                            </ul>
-                        </div>
-                    </div>
-                </section>
             </div>
-        </section>
+        </div>
+    </section>
 
-        <section class="projects fade-in">
-            <div class="container">
-
-                <section id="projects">
-                    <h2>Projetos</h2>
-                    <div class="projects-content">
-                        <!-- Div para o texto -->
-                        <div class="projects-text">
-                            <div class="project fade-in">
-                                <h3><a href="https://www.tjap.jus.br/portal/noticias/facilidade-e-eficiencia-digital-tjap-lanca-inteligencia-artificial-chatbot-juci-a-assistente-virtual-do-portal-do-poder-judiciario.html"
-                                        target="_blank">Chatbot JUCI</a></h3>
-                                <p>Uma assistente virtual baseada em LLMs opensource para o Tribunal de Justiça do
-                                    Estado do Amapá, visando facilitar o cidadão aos serviços do judiciário.</p>
-                            </div>
-                            <div class="project fade-in">
-                                <h3><a href="https://github.com/higorslva/calcpp_cli" target="_blank">CalCpp</a></h3>
-                                <p>Uma calculadora científica (W.I.P) em linha de comando feita em C++.</p>
-                            </div>
-                        </div>
-                        <!-- Div para a foto de perfil -->
-                        <div class="profile-picture">
-                            <img src="assets/Business-Diagram_generated.jpg"
-                                href="https://www.vecteezy.com/free-vector/hand-drawn-diagram"
-                                alt="Foto de Higor Silva">
-                        </div>
+    <!-- Projetos Section -->
+    <section id="projects" class="section projects-section">
+        <div class="container">
+            <h2 class="section-title fade-in">Projetos em Destaque</h2>
+            <div class="projects-grid">
+                <article class="project-card fade-in">
+                    <div class="project-image">
+                        <img src="assets/chatbot-juci.png" alt="Chatbot JUCI">
                     </div>
-                </section>
-            </div>
-        </section>
-
-        <section class="contact fade-in">
-            <div class="container">
-
-                <section id="contact">
-                    <h2>Contato</h2>
-                    <div class="contact-content">
-                        <!-- Div para o texto -->
-                        <div class="contact-text">
-                            <p>Tem algum projeto em mente e quer tirá-lo do papel? Quer que eu faça parte e acrescente
-                                na sua equipe? Podemos entrar em contato :)</p>
-                            <p>Email: <a href="mailto:higorslva@outlook.com">higorslva@outlook.com</a></p>
-                            <p>LinkedIn: <a href="https://www.linkedin.com/in/higorslva"
-                                    target="_blank">linkedin.com/in/higorslva</a></p>
-                            <p>Lattes: <a href="http://lattes.cnpq.br/4972084328427721" target="_blank">Currículo
-                                    Lattes</a></p>
-                        </div>
-                        <!-- Div para a foto de perfil -->
-                        <div class="profile-picture">
-                            <img src="assets/profile_contorno.png" alt="Foto de Higor Silva">
-                        </div>
+                    <div class="project-content">
+                        <h3>Chatbot JUCI</h3>
+                        <p>Assistente virtual baseada em LLMs opensource e RAG para o Tribunal de Justiça do Estado do Amapá, facilitando o acesso do cidadão aos serviços do judiciário.</p>
+                        <a href="https://www.tjap.jus.br/portal/noticias/facilidade-e-eficiencia-digital-tjap-lanca-inteligencia-artificial-chatbot-juci-a-assistente-virtual-do-portal-do-poder-judiciario.html" target="_blank" class="btn-secondary">Ver Notícia</a>
                     </div>
-                </section>
+                </article>
+                
+                <article class="project-card fade-in">
+                    <div class="project-image">
+                        <img src="assets/plan.png" alt="CalCpp">
+                    </div>
+                    <div class="project-content">
+                        <h3>IAFloorPlan</h3>
+                        <p>Plataforma inteligente baseado em IA que gera plantas baixas arquitetônicas a partir de descrições em texto, utilizando um LLM para criar layouts estruturados em JSON com grafos de adjacência.</p>
+                        <a href="https://github.com/higorslva/IA-FloorPlan" target="_blank" class="btn-secondary">Ver Projeto</a>
+                    </div>
+                </article>
             </div>
-        </section>
-    </div>
+        </div>
+    </section>
 
-    <footer class="fade-in">
+    <!-- Contato Section -->
+    <section id="contact" class="section contact-section">
+        <div class="container-small">
+            <h2 class="section-title fade-in">Entre em Contato</h2>
+            <p class="contact-intro fade-in">Tem algum projeto em mente? Quer colaborar ou tirar ideias do papel? Vamos conversar.</p>
+            
+            <div class="contact-content fade-in">
+                <div class="contact-info">
+                    <div class="contact-item">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z"></path>
+                            <polyline points="22,6 12,13 2,6"></polyline>
+                        </svg>
+                        <a href="mailto:higorslva@outlook.com">higorslva@outlook.com</a>
+                    </div>
+                    <div class="contact-item">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M16 8a6 6 0 0 1 6 6v7h-4v-7a2 2 0 0 0-2-2 2 2 0 0 0-2 2v7h-4v-7a6 6 0 0 1 6-6z"></path>
+                            <rect x="2" y="9" width="4" height="12"></rect>
+                            <circle cx="4" cy="4" r="2"></circle>
+                        </svg>
+                        <a href="https://www.linkedin.com/in/higorslva" target="_blank">linkedin.com/in/higorslva</a>
+                    </div>
+                    <div class="contact-item">
+                        <svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2">
+                            <path d="M9 19c-5 1.5-5-2.5-7-3m14 6v-3.87a3.37 3.37 0 0 0-.94-2.61c3.14-.35 6.44-1.54 6.44-7A5.44 5.44 0 0 0 20 4.77 5.07 5.07 0 0 0 19.91 1S18.73.65 16 2.48a13.38 13.38 0 0 0-7 0C6.27.65 5.09 1 5.09 1A5.07 5.07 0 0 0 5 4.77a5.44 5.44 0 0 0-1.5 3.78c0 5.42 3.3 6.61 6.44 7A3.37 3.37 0 0 0 9 18.13V22"></path>
+                        </svg>
+                        <a href="https://github.com/higorslva" target="_blank">github.com/higorslva</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </section>
+
+    <!-- Footer -->
+    <footer class="footer">
         <div class="container">
             <p>&copy; 2025 Higor Silva. Todos os direitos reservados.</p>
         </div>

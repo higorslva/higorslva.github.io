@@ -1,68 +1,89 @@
-document.addEventListener("DOMContentLoaded", () => {
-    const fadeInElements = document.querySelectorAll('.fade-in');
-
-    const options = {
-        threshold: 0.25,  // Aciona a animação quando 25% do elemento estiver visível
-    };
-    // Callback para o Intersection Observer
-    const observerCallback = (entries, observer) => {
+// Intersection Observer para animações fade-in
+document.addEventListener('DOMContentLoaded', () => {
+    // Fade-in animations
+    const fadeElements = document.querySelectorAll('.fade-in');
+    
+    const fadeObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                // Adiciona a classe 'visible' para tornar o elemento visível
                 entry.target.classList.add('visible');
-                observer.unobserve(entry.target); // Para de observar o elemento após a animação
+                fadeObserver.unobserve(entry.target);
             }
         });
-    };
-
-    // Cria o Intersection Observer
-    const observer = new IntersectionObserver(observerCallback, options);
-
-    // Observa todos os elementos com a classe .fade-in
-    fadeInElements.forEach(element => {
-        observer.observe(element);
+    }, {
+        threshold: 0.1,
+        rootMargin: '0px 0px -50px 0px'
     });
 
-    // Obter elementos
-    const hamburger = document.getElementById('hamburger');
-    const menu = document.getElementById('menu');
-    const menuItems = menu.querySelectorAll('a'); // Seleciona todos os links do menu
+    fadeElements.forEach(element => {
+        fadeObserver.observe(element);
+    });
 
-    if (hamburger && menu) {
-        // Abrir/fechar o menu ao clicar no ícone do hambúrguer
-        hamburger.addEventListener('click', (e) => {
-            e.stopPropagation(); // Impede que o clique se propague para o documento
-            hamburger.classList.toggle('is-active'); // Adiciona/remove a classe para animar o ícone
-            menu.classList.toggle('show');
+    // Menu toggle para mobile
+    const menuToggle = document.getElementById('menuToggle');
+    const navMenu = document.getElementById('navMenu');
+    const navLinks = navMenu.querySelectorAll('a');
+
+    menuToggle.addEventListener('click', () => {
+        navMenu.classList.toggle('active');
+        menuToggle.classList.toggle('active');
+        
+        // Anima as barras do hamburger
+        const spans = menuToggle.querySelectorAll('span');
+        if (menuToggle.classList.contains('active')) {
+            spans[0].style.transform = 'rotate(45deg) translateY(6px)';
+            spans[1].style.opacity = '0';
+            spans[2].style.transform = 'rotate(-45deg) translateY(-6px)';
+        } else {
+            spans[0].style.transform = 'none';
+            spans[1].style.opacity = '1';
+            spans[2].style.transform = 'none';
+        }
+    });
+
+    // Fecha menu ao clicar em um link
+    navLinks.forEach(link => {
+        link.addEventListener('click', () => {
+            navMenu.classList.remove('active');
+            menuToggle.classList.remove('active');
+            const spans = menuToggle.querySelectorAll('span');
+            spans[0].style.transform = 'none';
+            spans[1].style.opacity = '1';
+            spans[2].style.transform = 'none';
         });
+    });
 
-        // Fechar o menu ao clicar em um item do menu
-        menuItems.forEach(item => {
-            item.addEventListener('click', () => {
-                menu.classList.remove('show'); // Fecha o menu
-            });
-        });
+    // Smooth scroll com offset para header fixo
+    document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+        anchor.addEventListener('click', function (e) {
+            e.preventDefault();
+            const target = document.querySelector(this.getAttribute('href'));
+            if (target) {
+                const headerOffset = 44;
+                const elementPosition = target.getBoundingClientRect().top;
+                const offsetPosition = elementPosition + window.pageYOffset - headerOffset;
 
-        // Fechar o menu ao clicar fora dele
-        document.addEventListener('click', (e) => {
-            if (!menu.contains(e.target) && !hamburger.contains(e.target)) {
-                menu.classList.remove('show'); // Fecha o menu
+                window.scrollTo({
+                    top: offsetPosition,
+                    behavior: 'smooth'
+                });
             }
         });
+    });
 
-        // Impedir que o menu feche ao clicar dentro dele
-        menu.addEventListener('click', (e) => {
-            e.stopPropagation(); // Impede que o clique se propague para o documento
-        });
-    }
+    // Header blur effect on scroll
+    const header = document.querySelector('.header');
+    let lastScroll = 0;
+
+    window.addEventListener('scroll', () => {
+        const currentScroll = window.pageYOffset;
+        
+        if (currentScroll > 50) {
+            header.style.boxShadow = '0 1px 3px rgba(0, 0, 0, 0.08)';
+        } else {
+            header.style.boxShadow = 'none';
+        }
+        
+        lastScroll = currentScroll;
+    });
 });
-const toggleButton = document.getElementById('dark-mode-toggle');
-const menu = document.querySelector('.menu');
-const body = document.body;
-
-// Adiciona o evento de clique para alternar o menu
-toggleButton.addEventListener('click', () => {
-    // Adiciona ou remove a classe 'show' para mostrar ou esconder o menu
-    menu.classList.toggle('show');
-});
-
