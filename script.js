@@ -100,6 +100,15 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
+    // Clique no card de projeto abre o link
+    document.querySelectorAll('.project-card').forEach(card => {
+        card.addEventListener('click', function(e) {
+            if (e.target.closest('.btn-secondary')) return;
+            const url = this.dataset.url;
+            if (url) window.open(url, '_blank');
+        });
+    });
+
     // Header blur effect on scroll
     const header = document.querySelector('.header');
     let lastScroll = 0;
