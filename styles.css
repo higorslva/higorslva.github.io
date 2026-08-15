@@ -280,9 +280,8 @@ body {
 }
 
 .about-content {
-    display: grid;
-    grid-template-columns: 1fr 1fr;
-    gap: 60px;
+    max-width: 692px;
+    margin: 0 auto;
 }
 
 .about-text p {
@@ -290,6 +289,7 @@ body {
     line-height: 1.381;
     letter-spacing: -0.003em;
     color: var(--color-text-secondary);
+    text-align: justify;
     margin-bottom: 24px;
 }
 
@@ -298,28 +298,36 @@ body {
     font-weight: 600;
 }
 
+.about-skills {
+    margin-top: 64px;
+}
+
 .about-skills h3 {
     font-size: 24px;
     font-weight: 600;
     letter-spacing: -0.009em;
     margin-bottom: 28px;
+    text-align: center;
 }
 
 .skills-grid {
     display: grid;
-    grid-template-columns: 1fr 1fr;
+    grid-template-columns: repeat(3, 1fr);
     gap: 16px;
 }
 
 .skill-item {
     display: flex;
+    flex-direction: column;
     align-items: center;
+    justify-content: center;
     gap: 12px;
     padding: 16px;
     background: var(--color-background);
     border-radius: 12px;
     font-size: 15px;
     letter-spacing: -0.016em;
+    text-align: center;
     transition: background-color 0.3s ease;
 }
 
@@ -541,17 +549,12 @@ body {
         margin-bottom: 48px;
     }
 
-    .about-content {
-        grid-template-columns: 1fr;
-        gap: 40px;
-    }
-
     .about-text p {
         font-size: 17px;
     }
 
     .skills-grid {
-        grid-template-columns: 1fr;
+        grid-template-columns: repeat(2, 1fr);
     }
 
     .projects-grid {
@@ -583,6 +586,10 @@ body {
 
     .about-text p {
         font-size: 15px;
+    }
+
+    .skills-grid {
+        grid-template-columns: 1fr;
     }
 
     .logo {
