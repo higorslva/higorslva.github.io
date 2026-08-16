@@ -253,6 +253,7 @@ body {
 /* Sections */
 .section {
     padding: 120px 22px;
+    scroll-margin-top: var(--header-height);
 }
 
 .container {
@@ -333,6 +334,123 @@ body {
 
 .skill-icon {
     font-size: 24px;
+}
+
+/* Experience Section */
+.timeline {
+    position: relative;
+    max-width: 800px;
+    margin: 0 auto;
+    padding-left: 32px;
+}
+
+.timeline::before {
+    content: '';
+    position: absolute;
+    top: 0;
+    bottom: 0;
+    left: 7px;
+    width: 2px;
+    background: var(--color-border);
+}
+
+.timeline-item {
+    position: relative;
+    padding-bottom: 48px;
+}
+
+.timeline-item:last-child {
+    padding-bottom: 0;
+}
+
+.timeline-dot {
+    position: absolute;
+    left: -32px;
+    top: 6px;
+    width: 16px;
+    height: 16px;
+    border-radius: 50%;
+    background: var(--color-accent);
+    border: 3px solid var(--color-background);
+}
+
+.timeline-content {
+    background: var(--color-surface);
+    border-radius: 12px;
+    padding: 24px 28px;
+    transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.timeline-content:hover {
+    transform: translateY(-2px);
+    box-shadow: 0 10px 24px rgba(0, 0, 0, 0.08);
+}
+
+[data-theme="dark"] .timeline-content:hover {
+    box-shadow: 0 10px 24px rgba(255, 255, 255, 0.05);
+}
+
+.timeline-header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 12px;
+    margin-bottom: 4px;
+}
+
+.timeline-header h3 {
+    font-size: 22px;
+    font-weight: 600;
+    letter-spacing: -0.009em;
+}
+
+.timeline-current {
+    flex-shrink: 0;
+    padding: 4px 12px;
+    border-radius: 980px;
+    background: var(--color-accent);
+    color: #ffffff;
+    font-size: 12px;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+}
+
+.timeline-role {
+    font-size: 17px;
+    color: var(--color-text-primary);
+    margin-bottom: 6px;
+}
+
+.timeline-date {
+    display: inline-block;
+    font-size: 14px;
+    font-weight: 500;
+    letter-spacing: 0.01em;
+    color: var(--color-accent);
+    margin-bottom: 12px;
+}
+
+.timeline-desc {
+    font-size: 15px;
+    line-height: 1.47059;
+    color: var(--color-text-secondary);
+    margin-bottom: 12px;
+}
+
+.timeline-tags {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 8px;
+}
+
+.timeline-tags span {
+    padding: 4px 12px;
+    border-radius: 980px;
+    background: var(--color-background);
+    border: 1px solid var(--color-border);
+    font-size: 12px;
+    letter-spacing: -0.01em;
+    color: var(--color-text-secondary);
 }
 
 /* Projects Section */
@@ -572,6 +690,18 @@ body {
 
     .contact-intro {
         font-size: 17px;
+    }
+
+    .timeline {
+        padding-left: 24px;
+    }
+
+    .timeline-dot {
+        left: -24px;
+    }
+
+    .timeline-content {
+        padding: 20px;
     }
 }
 
