@@ -109,19 +109,16 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    // Header blur effect on scroll
+    // Header: transparente sobre o hero, sólido após passá-lo
     const header = document.querySelector('.header');
-    let lastScroll = 0;
+    const hero = document.querySelector('.hero');
 
-    window.addEventListener('scroll', () => {
-        const currentScroll = window.pageYOffset;
-        
-        if (currentScroll > 50) {
-            header.style.boxShadow = '0 1px 3px rgba(0, 0, 0, 0.08)';
-        } else {
-            header.style.boxShadow = 'none';
-        }
-        
-        lastScroll = currentScroll;
-    });
+    const updateHeaderState = () => {
+        const threshold = hero ? hero.offsetHeight - 76 : 50;
+        header.classList.toggle('scrolled', window.pageYOffset > threshold);
+    };
+
+    updateHeaderState();
+    window.addEventListener('scroll', updateHeaderState, { passive: true });
+    window.addEventListener('resize', updateHeaderState);
 });
